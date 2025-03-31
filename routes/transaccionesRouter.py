@@ -27,7 +27,7 @@ def get_db():
 # Función para integrar con Stripe mediante PaymentIntent
 def process_payment(transaction: Transaction) -> dict:
     try:
-        # Convertir el monto a centavos (asumiendo que el monto está en dólares)
+        # Convertir el monto a centavos
         amount_in_cents = int(transaction.amount * 100)
         intent = stripe.PaymentIntent.create(
             amount=amount_in_cents,

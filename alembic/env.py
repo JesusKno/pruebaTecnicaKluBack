@@ -23,7 +23,7 @@ config = context.config
 
 
 #configuracion de la bd
-# Actualiza la URL de conexión usando la variable de entorno
+
 database_url = os.getenv("DB_URL")
 if database_url:
     config.set_main_option("sqlalchemy.url", database_url)
@@ -32,7 +32,7 @@ if database_url:
 fileConfig(config.config_file_name)
 
 
-# Importa tu metadata (ajusta la ruta a tu modelo)
+# Importacion de metadata
 from models.transacciones import Base
 target_metadata = Base.metadata
 

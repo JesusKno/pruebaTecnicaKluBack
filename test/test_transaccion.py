@@ -101,6 +101,6 @@ def test_list_transactions(monkeypatch):
     list_response = client.get("/transactions/")
     assert list_response.status_code == 200
     data_list = list_response.json()
-    # Comprueba que el resultado es una lista y contiene al menos 2 transacciones.
+  
     assert isinstance(data_list, list)
     assert len(data_list) >= 2
